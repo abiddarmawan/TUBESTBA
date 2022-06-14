@@ -210,7 +210,7 @@ while len(stack) > 0 :
   #st.write('isi stack = ', stack, end='\n\n')
 
 if symbol == 'EOS' and len(stack) == 0 :
-  st.success(f"input string :  *'{sentence}'* Valid")
+  st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
 else :
   st.success(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
 
