@@ -4,12 +4,10 @@ import string
 
 st.set_page_config(layout="wide")
 st.title("Lexical Analyzer dan parser")
+st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 st.header("Grammar")
-clo1 = st.columns(1) 
-with clo1 :
-   st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 
-col1, col2, col3,col4 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 
 
 
