@@ -2,7 +2,7 @@ import streamlit as st
 import string 
 
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 st.title("Lexical Analyzer dan parser")
