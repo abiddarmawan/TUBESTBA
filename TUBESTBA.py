@@ -5,8 +5,11 @@ import string
 st.set_page_config(layout="wide")
 st.title("Lexical Analyzer dan parser")
 st.header("Grammar")
+clo1 = st.columns(1) 
+with clo1 :
+   st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 
-col1, col2, col3,col4 = st.columns(4)
+col1, col2, col3,col4 = st.columns(3)
 
 
 
@@ -91,7 +94,7 @@ transition['q29', 'n'] = 'q21'
 idx = 0
 s = 'q0'
 curToken = ''
-with col3:
+with col1:
     st.header("NOUN")
     st.write("Bapak")
     st.write("Mak")
@@ -99,14 +102,13 @@ with col3:
     st.write("Bakso")
     st.write("Ayam")
     st.write("Oto")
-with col4:
+with col2:
     st.header("VERB")
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-with col1 : 
-      st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
-with col2 :
+
+with col3 :
     sentence = st.text_input("Masukkan Kata", "")
     sentence = sentence.lower()+'#'
     cek = st.button("cek hasil")
@@ -120,7 +122,7 @@ with col2 :
                     curToken = ''
 
             if s == 'error' :
-                    #st.write("error")
+                    st.write("error")
                     break
             idx+=1
 st.header("LEXICAL ANALYZER")
