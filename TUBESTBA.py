@@ -214,7 +214,7 @@ while len(stack) > 0 :
 if symbol == 'EOS' and len(stack) == 0 :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
 else :
-  st.success(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
+  st.error(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
 
 
 
