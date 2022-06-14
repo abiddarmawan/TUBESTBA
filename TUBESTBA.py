@@ -126,12 +126,12 @@ else :
        st.error(f'sentence **{sentence}** Tidak Diterima')
         
 #parse 
-#token = st.text_input("Masukkan Kata", "")
-#token = sentence.lower().split()
-#token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
+
+token = sentence.lower().split()
+token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
 
 #print(token)
-#token.append('EOS')
+token.append('EOS')
 
 non_terminal = ['S', 'NN', 'VB']
 terminal = ['bapak', 'mak', 'wa', 'bakso', 'ayam', 'oto', 'belanjo', 'nangkok', 'bawak']
@@ -175,10 +175,6 @@ stack = []
 stack.append('#')
 stack.append('S')
 
-token = st.text_input("Masukkan Kata", "")
-token = sentence.lower().split()
-token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
-token.append('EOS')
 idx_token = 0
 symbol = token[idx_token]
 
