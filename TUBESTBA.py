@@ -104,9 +104,9 @@ with col4:
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-with col2 : 
+with col1 : 
       st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
-with col1 :
+with col2 :
     sentence = st.text_input("Masukkan Kata", "")
     sentence = sentence.lower()+'#'
     cek = st.button("cek hasil")
