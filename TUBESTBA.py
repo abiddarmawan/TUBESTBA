@@ -8,7 +8,7 @@ st.title("Lexical Analyzer")
 
 col1, col2, col3 = st.columns(3)
 
-
+st.header("Grammar")
 with col2:
     st.header("NOUN")
     st.write("Bapak")
