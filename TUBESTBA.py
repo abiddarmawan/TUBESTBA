@@ -126,94 +126,93 @@ else :
        st.error(f'sentence **{sentence}** Tidak Diterima')
         
 #parse 
-if sentence != '' :
 
-  token = sentence.lower().split()
-  token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
+token = sentence.lower().split()
+token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
 
-  #print(token)
-  token.append('EOS')
+#print(token)
+token.append('EOS')
 
-  non_terminal = ['S', 'NN', 'VB']
-  terminal = ['bapak', 'mak', 'wa', 'bakso', 'ayam', 'oto', 'belanjo', 'nangkok', 'bawak']
+non_terminal = ['S', 'NN', 'VB']
+terminal = ['bapak', 'mak', 'wa', 'bakso', 'ayam', 'oto', 'belanjo', 'nangkok', 'bawak']
 
-  parse_table = {}
+parse_table = {}
 
-  parse_table[('S', 'bapak')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'mak')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'wa')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'bakso')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'ayam')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'oto')] = ['NN', 'VB', 'NN']
-  parse_table[('S', 'belanjo')] = ['error']
-  parse_table[('S', 'nangkok')] = ['error']
-  parse_table[('S', 'bawak')] = ['error']
-  parse_table[('S', 'EOS')] = ['error']
+parse_table[('S', 'bapak')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'mak')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'wa')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'bakso')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'ayam')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'oto')] = ['NN', 'VB', 'NN']
+parse_table[('S', 'belanjo')] = ['error']
+parse_table[('S', 'nangkok')] = ['error']
+parse_table[('S', 'bawak')] = ['error']
+parse_table[('S', 'EOS')] = ['error']
 
-  parse_table[('NN', 'bapak')] = ['bapak']
-  parse_table[('NN', 'mak')] = ['mak']
-  parse_table[('NN', 'wa')] = ['wa']
-  parse_table[('NN', 'bakso')] = ['bakso']
-  parse_table[('NN', 'ayam')] = ['ayam']
-  parse_table[('NN', 'oto')] = ['oto']
-  parse_table[('NN', 'belanjo')] = ['error']
-  parse_table[('NN', 'nangkok')] = ['error']
-  parse_table[('NN', 'bawak')] = ['error']
-  parse_table[('NN', 'EOS')] = ['error']
+parse_table[('NN', 'bapak')] = ['bapak']
+parse_table[('NN', 'mak')] = ['mak']
+parse_table[('NN', 'wa')] = ['wa']
+parse_table[('NN', 'bakso')] = ['bakso']
+parse_table[('NN', 'ayam')] = ['ayam']
+parse_table[('NN', 'oto')] = ['oto']
+parse_table[('NN', 'belanjo')] = ['error']
+parse_table[('NN', 'nangkok')] = ['error']
+parse_table[('NN', 'bawak')] = ['error']
+parse_table[('NN', 'EOS')] = ['error']
 
-  parse_table[('VB', 'bapak')] = ['error']
-  parse_table[('VB', 'mak')] = ['error']
-  parse_table[('VB', 'wa')] = ['error']
-  parse_table[('VB', 'bakso')] = ['error']
-  parse_table[('VB', 'ayam')] = ['error']
-  parse_table[('VB', 'oto')] = ['error']
-  parse_table[('VB', 'belanjo')] = ['belanjo']
-  parse_table[('VB', 'nangkok')] = ['nangkok']
-  parse_table[('VB', 'bawak')] = ['bawak']
-  parse_table[('VB', 'EOS')] = ['error']
+parse_table[('VB', 'bapak')] = ['error']
+parse_table[('VB', 'mak')] = ['error']
+parse_table[('VB', 'wa')] = ['error']
+parse_table[('VB', 'bakso')] = ['error']
+parse_table[('VB', 'ayam')] = ['error']
+parse_table[('VB', 'oto')] = ['error']
+parse_table[('VB', 'belanjo')] = ['belanjo']
+parse_table[('VB', 'nangkok')] = ['nangkok']
+parse_table[('VB', 'bawak')] = ['bawak']
+parse_table[('VB', 'EOS')] = ['error']
 
-  stack = []
-  stack.append('#')
-  stack.append('S')
+stack = []
+stack.append('#')
+stack.append('S')
 
-  idx_token = 0
-  symbol = token[idx_token]
+idx_token = 0
+symbol = token[idx_token]
 
-  while len(stack) > 0 :
-    top = stack[len(stack) - 1]
-    #st.write('top = ', top)
-    #print('symbol = ', symbol)
-    if top in terminal :
-      #st.write('top adalah simbol terminal')
-      if top == symbol :
+while len(stack) > 0 :
+  top = stack[len(stack) - 1]
+  #st.write('top = ', top)
+  #print('symbol = ', symbol)
+  if top in terminal :
+    #st.write('top adalah simbol terminal')
+    if top == symbol :
+      stack.pop()
+      idx_token += 1
+      symbol = token[idx_token]
+      if symbol == 'EOS' :
+        #st.write('isi stack = ', stack)
         stack.pop()
-        idx_token += 1
-        symbol = token[idx_token]
-        if symbol == 'EOS' :
-          #st.write('isi stack = ', stack)
-          stack.pop()
-      else :
-          #st.write('error')
-          break
-    elif top in non_terminal :
-      #st.write('top adalah simbol non terminal')
-      if parse_table[(top, symbol)][0] != 'error' :
-        stack.pop()
-        symbol_push = parse_table[(top, symbol)]
-        for i in range(len(symbol_push)-1, -1, -1) :
-          stack.append(symbol_push[i])
-      else : 
+    else :
         #st.write('error')
         break
-    else :
-      #write('error')
+  elif top in non_terminal :
+    #st.write('top adalah simbol non terminal')
+    if parse_table[(top, symbol)][0] != 'error' :
+      stack.pop()
+      symbol_push = parse_table[(top, symbol)]
+      for i in range(len(symbol_push)-1, -1, -1) :
+        stack.append(symbol_push[i])
+    else : 
+      #st.write('error')
       break
-    #st.write('isi stack = ', stack, end='\n\n')
-
-  if symbol == 'EOS' and len(stack) == 0 :
-    st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
   else :
-    st.success(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
+    #write('error')
+    break
+  #st.write('isi stack = ', stack, end='\n\n')
+
+if symbol == 'EOS' and len(stack) == 0 :
+  st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
+else :
+  st.success(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
 
 
 
