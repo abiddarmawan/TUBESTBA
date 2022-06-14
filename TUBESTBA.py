@@ -120,7 +120,7 @@ with col2 :
                     curToken = ''
 
             if s == 'error' :
-                    st.write("error")
+                    #st.write("error")
                     break
             idx+=1
 st.header("LEXICAL ANALYZER")
