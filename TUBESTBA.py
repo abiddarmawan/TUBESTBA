@@ -2,13 +2,13 @@ import streamlit as st
 import string 
 
 
-#st.set_page_config(layout="wide")
-#st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=300")
+st.set_page_config(layout="wide")
+
 st.title("Lexical Analyzer dan parser")
 st.header("BAHASA BENGKULU")
-st.header("Grammar")
 
-col1, col2, col3 = st.columns(3)
+
+col1, col2, col3,col4 = st.columns(4)
 
 
 
@@ -95,6 +95,7 @@ s = 'q0'
 curToken = ''
 n = 1
 with col1:
+   
     st.header("NOUN")
     st.write("Bapak")
     st.write("Mak")
@@ -103,17 +104,20 @@ with col1:
     st.write("Ayam")
     st.write("Oto")
 with col2:
+
     st.header("VERB")
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-
 with col3 :
-    sentence = st.text_input("Masukkan Kata", "")
-    sentence = sentence.lower()+'#'
-    cek = st.button("cek hasil")
+  st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=400")
 
-    while s != 'accept' and cek :
+
+
+sentence = st.text_input("Masukkan Kata", "")
+sentence = sentence.lower()+'#'
+cek = st.button("cek hasil")
+while s != 'accept' and cek :
             now = sentence[idx]
             curToken += now
             s = transition[(s, now)]
@@ -126,14 +130,16 @@ with col3 :
                     #st.write("error")
                     break
             idx+=1
+
+
+
 st.header("LEXICAL ANALYZER")
 if s == 'accept' and cek :
        st.success(f"Semua token di input  *'{sentence}'* Valid")
-elif s == "error" and cek: 
+elif s == "error" and cek and sentence != '': 
        st.error(f'sentence **{sentence}** Tidak Diterima')
         
 #parse 
-
 token = sentence.lower().split()
 token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
 
@@ -185,7 +191,7 @@ stack.append('S')
 idx_token = 0
 symbol = token[idx_token]
 
-while len(stack) > 0 :
+while len(stack) > 0 and cek  :
   top = stack[len(stack) - 1]
   #st.write('top = ', top)
   #print('symbol = ', symbol)
