@@ -113,11 +113,13 @@ with col3 :
     cek = st.button("cek hasil")
 
     while s != 'accept' :
+            n = 1
             now = sentence[idx]
             curToken += now
             s = transition[(s, now)]
             if s == 'q5' :
-                    #st.write("curtoken :",curToken,"Valid")
+                    st.write("curtoken :",n,curToken,"Valid")
+                    n = n + 1
                     curToken = ''
 
             if s == 'error' :
