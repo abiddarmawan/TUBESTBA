@@ -180,34 +180,34 @@ symbol = token[idx_token]
 
 while len(stack) > 0 :
   top = stack[len(stack) - 1]
-  st.write('top = ', top)
-  print('symbol = ', symbol)
+  #st.write('top = ', top)
+  #print('symbol = ', symbol)
   if top in terminal :
-    st.write('top adalah simbol terminal')
+    #st.write('top adalah simbol terminal')
     if top == symbol :
       stack.pop()
       idx_token += 1
       symbol = token[idx_token]
       if symbol == 'EOS' :
-        st.write('isi stack = ', stack)
+        #st.write('isi stack = ', stack)
         stack.pop()
     else :
-        st.write('error')
+        #st.write('error')
         break
   elif top in non_terminal :
-    st.write('top adalah simbol non terminal')
+    #st.write('top adalah simbol non terminal')
     if parse_table[(top, symbol)][0] != 'error' :
       stack.pop()
       symbol_push = parse_table[(top, symbol)]
       for i in range(len(symbol_push)-1, -1, -1) :
         stack.append(symbol_push[i])
     else : 
-      st.write('error')
+      #st.write('error')
       break
   else :
-    st.write('error')
+    #write('error')
     break
-  st.write('isi stack = ', stack, end='\n\n')
+  #st.write('isi stack = ', stack, end='\n\n')
 
 if symbol == 'EOS' and len(stack) == 0 :
   st.success(f"input string :  *'{sentence}'* Valid")
