@@ -5,7 +5,7 @@ import string
 #st.set_page_config(layout="wide")
 #st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=300")
 st.title("Lexical Analyzer dan parser")
-
+st.header("BAHASA BENGKULU")
 st.header("Grammar")
 
 col1, col2, col3 = st.columns(3)
