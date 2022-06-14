@@ -2,7 +2,7 @@ import streamlit as st
 import string 
 
 
-
+st.set_page_config(layout="wide")
 st.title("Lexical Analyzer")
 
 
