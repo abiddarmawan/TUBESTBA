@@ -118,7 +118,7 @@ with col3 :
             curToken += now
             s = transition[(s, now)]
             if s == 'q5' :
-                    st.write("curtoken :",str(n),curToken,"Valid")
+                    st.write("curtoken ",str(n),":",curToken,"Valid")
                     n = n + 1
                     curToken = ''
 
