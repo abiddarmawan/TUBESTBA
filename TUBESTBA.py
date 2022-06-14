@@ -3,13 +3,14 @@ import string
 
 
 st.set_page_config(layout="wide")
+
+st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 st.title("Lexical Analyzer dan parser")
 
+col1, col2 = st.columns(2)
 
-col1, col2, col3 = st.columns(3)
 
-
-with col2:
+with col1:
     st.header("NOUN")
     st.write("Bapak")
     st.write("Mak")
@@ -17,12 +18,11 @@ with col2:
     st.write("Bakso")
     st.write("Ayam")
     st.write("Oto")
-with col3:
+with col2:
     st.header("VERB")
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-with col1 : 
         st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 
     
