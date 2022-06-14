@@ -225,7 +225,7 @@ while len(stack) > 0 and cek  :
 st.header("PARSER")
 if symbol == 'EOS' and len(stack) == 0 and cek :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
-elif symbol != 'EOS' and cek :
+elif  cek :
   st.error(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
 
 
