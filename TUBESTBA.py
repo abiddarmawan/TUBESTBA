@@ -126,7 +126,7 @@ else :
        st.error(f'sentence **{sentence}** Tidak Diterima')
         
 #parse 
-
+token = st.text_input("Masukkan Kata", "")
 token = sentence.lower().split()
 token[len(token) - 1] = token[len(token) - 1][:len(token[len(token) - 1]) - 1]
 
