@@ -93,6 +93,7 @@ transition['q29', 'n'] = 'q21'
 idx = 0
 s = 'q0'
 curToken = ''
+n = 1
 with col1:
     st.header("NOUN")
     st.write("Bapak")
@@ -117,8 +118,7 @@ with col3 :
             curToken += now
             s = transition[(s, now)]
             if s == 'q5' :
-                    n = 1
-                    st.write("curtoken :",n,curToken,"Valid")
+                    st.write("curtoken :",str(n),curToken,"Valid")
                     n = n + 1
                     curToken = ''
 
