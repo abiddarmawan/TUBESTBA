@@ -23,7 +23,7 @@ with col2:
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-        st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
+  
 
     
 alpha = list(string.ascii_lowercase)
