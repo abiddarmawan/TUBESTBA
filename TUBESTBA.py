@@ -3,7 +3,7 @@ import string
 
 
 st.set_page_config(layout="wide")
-st.title("Lexical Analyzer")
+st.title("Lexical Analyzer dan parser")
 st.header("Grammar")
 
 col1, col2, col3 = st.columns(3)
@@ -122,6 +122,7 @@ while s != 'accept' :
                 st.write("error")
                 break
         idx+=1
+st.title("LEXICAL ANALYZER")
 if s == 'accept' :
        st.success(f"Semua token di input  *'{sentence}'* Valid")
 else : 
@@ -211,6 +212,7 @@ while len(stack) > 0 :
     break
   #st.write('isi stack = ', stack, end='\n\n')
 
+st.title("PARDSER")
 if symbol == 'EOS' and len(stack) == 0 :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
 else :
