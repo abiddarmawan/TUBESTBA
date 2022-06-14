@@ -212,7 +212,7 @@ while len(stack) > 0 :
     break
   #st.write('isi stack = ', stack, end='\n\n')
 
-st.header("PARDSER")
+st.header("PARSER")
 if symbol == 'EOS' and len(stack) == 0 :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
 else :
