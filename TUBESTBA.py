@@ -3,7 +3,7 @@ import string
 
 
 st.set_page_config(layout="wide")
-st.title("Lexical Analyzer")
+st.title("Lexical Analyzer dan parser")
 
 
 col1, col2, col3 = st.columns(3)
