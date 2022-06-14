@@ -11,17 +11,17 @@ col1, col2, col3 = st.columns(3)
 
 with col2:
     st.header("NOUN")
-    st.write("bapak")
-    st.write("mak")
-    st.write("wa")
-    st.write("bakso")
-    st.write("ayam")
-    st.write("oto")
+    st.write("Bapak")
+    st.write("Mak")
+    st.write("Wa")
+    st.write("Bakso")
+    st.write("Ayam")
+    st.write("Oto")
 with col3:
     st.header("VERB")
-    st.write("belanjo")
-    st.write("nangkok")
-    st.write("bawak")
+    st.write("Belanjo")
+    st.write("Nangkok")
+    st.write("Bawak")
 with col1 : 
         st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 
