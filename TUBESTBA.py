@@ -113,7 +113,7 @@ with col3 :
     sentence = sentence.lower()+'#'
     cek = st.button("cek hasil")
 
-    while s != 'accept' :
+    while s != 'accept' and cek :
             now = sentence[idx]
             curToken += now
             s = transition[(s, now)]
