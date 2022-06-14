@@ -3,15 +3,13 @@ import string
 
 
 st.set_page_config(layout="wide")
-
-st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
-st.title("Lexical Analyzer dan parser")
+st.title("Lexical Analyzer")
 
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 
-with col1:
+with col2:
     st.header("NOUN")
     st.write("Bapak")
     st.write("Mak")
@@ -19,12 +17,13 @@ with col1:
     st.write("Bakso")
     st.write("Ayam")
     st.write("Oto")
-with col2:
+with col3:
     st.header("VERB")
     st.write("Belanjo")
     st.write("Nangkok")
     st.write("Bawak")
-  
+with col1 : 
+      st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
 
     
 alpha = list(string.ascii_lowercase)
@@ -104,25 +103,23 @@ transition['q29', 'n'] = 'q21'
 idx = 0
 s = 'q0'
 curToken = ''
+ 
+sentence = st.text_input("Masukkan Kata", "")
+sentence = sentence.lower()+'#'
+cek = st.button("cek hasil")
 
-col1 = st.columns(1)
-with col1 : 
-  sentence = st.text_input("Masukkan Kata", "")
-  sentence = sentence.lower()+'#'
-  cek = st.button("cek hasil")
+while s != 'accept' :
+        now = sentence[idx]
+        curToken += now
+        s = transition[(s, now)]
+        if s == 'q5' :
+                st.write("curtoken :",curToken,"Valid")
+                curToken = ''
 
-  while s != 'accept' :
-          now = sentence[idx]
-          curToken += now
-          s = transition[(s, now)]
-          if s == 'q5' :
-                  st.write("curtoken :",curToken,"Valid")
-                  curToken = ''
-
-          if s == 'error' :
-                  st.write("error")
-                  break
-          idx+=1
+        if s == 'error' :
+                st.write("error")
+                break
+        idx+=1
 if s == 'accept' :
        st.success(f"Semua token di input  *'{sentence}'* Valid")
 else : 
