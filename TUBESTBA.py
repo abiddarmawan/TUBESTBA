@@ -4,11 +4,11 @@ import string
 
 st.set_page_config(layout="wide")
 st.title("Lexical Analyzer")
-
+st.header("Grammar")
 
 col1, col2, col3 = st.columns(3)
 
-st.header("Grammar")
+
 with col2:
     st.header("NOUN")
     st.write("Bapak")
