@@ -127,9 +127,9 @@ with col3 :
                     break
             idx+=1
 st.header("LEXICAL ANALYZER")
-if s == 'accept' :
+if s == 'accept' and cek :
        st.success(f"Semua token di input  *'{sentence}'* Valid")
-else : 
+elif s == "error" and cek: 
        st.error(f'sentence **{sentence}** Tidak Diterima')
         
 #parse 
@@ -217,9 +217,9 @@ while len(stack) > 0 :
   #st.write('isi stack = ', stack, end='\n\n')
 
 st.header("PARSER")
-if symbol == 'EOS' and len(stack) == 0 :
+if symbol == 'EOS' and len(stack) == 0 and cek :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
-else :
+elif symbol != 'EOS' and cek :
   st.error(f"error,input string *'{sentence}'* tidak diterima,tidak sesuai grammar")
 
 
