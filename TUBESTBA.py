@@ -6,6 +6,7 @@ st.set_page_config(layout="wide")
 
 st.title("Lexical Analyzer dan parser")
 st.header("BAHASA BENGKULU")
+st.header("GRAMMAR")
 
 
 col1, col2, col3,col4 = st.columns(4)
@@ -110,7 +111,7 @@ with col2:
     st.write("Nangkok")
     st.write("Bawak")
 with col3 :
-  st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=400")
+  st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=500")
 
 
 
