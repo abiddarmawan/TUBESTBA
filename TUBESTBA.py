@@ -122,7 +122,7 @@ while s != 'accept' :
                 st.write("error")
                 break
         idx+=1
-st.title("LEXICAL ANALYZER")
+st.header("LEXICAL ANALYZER")
 if s == 'accept' :
        st.success(f"Semua token di input  *'{sentence}'* Valid")
 else : 
@@ -212,7 +212,7 @@ while len(stack) > 0 :
     break
   #st.write('isi stack = ', stack, end='\n\n')
 
-st.title("PARDSER")
+st.header("PARDSER")
 if symbol == 'EOS' and len(stack) == 0 :
   st.success(f"input string :  *'{sentence}'* sesuai,diterima grammar")
 else :
