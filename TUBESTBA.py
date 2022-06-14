@@ -4,7 +4,7 @@ import string
 
 st.set_page_config(layout="wide")
 st.title("Lexical Analyzer dan parser")
-st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=740")
+st.image("https://img.freepik.com/free-vector/rafflesia-flower_9378-9.jpg?w=100")
 st.header("Grammar")
 
 col1, col2, col3 = st.columns(3)
@@ -116,11 +116,11 @@ with col3 :
             curToken += now
             s = transition[(s, now)]
             if s == 'q5' :
-                    st.write("curtoken :",curToken,"Valid")
+                    #st.write("curtoken :",curToken,"Valid")
                     curToken = ''
 
             if s == 'error' :
-                    st.write("error")
+                    #st.write("error")
                     break
             idx+=1
 st.header("LEXICAL ANALYZER")
